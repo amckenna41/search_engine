@@ -1,0 +1,25 @@
+#buildspec yaml file used for pipelining
+version: 0.2
+
+env:
+  variables:
+    REGION_NAME: eu-west-1
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.7
+    commands:
+      - echo Executing Install Phase in $REGION_NAME
+  pre_build:
+    commands:
+      - echo Executing Pre Build Phase
+  build:
+    commands:
+      - echo Executing Build Phase
+      - echo Build started
+
+  post_build:
+    commands:
+      - echo Executing Post Build Phase
+      - echo Build succeded.
