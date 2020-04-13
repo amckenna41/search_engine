@@ -1,0 +1,31 @@
+
+#serverless.yml required for lambda function integration
+
+service: sls-scraper
+provider:
+  name: aws
+  runtime: python3.6
+  region: eu-west-1
+
+functions:
+  hello:
+    handler: handler.hello
+  lambdaScrape:
+    handler: launcher.scrape
+
+package:
+  include:
+    - handler.py
+    - launcher.py
+    - sls_scraper/**
+    - scrapy.cfg
+  exclude:
+    - "./**"
+
+plugins:
+  - serverless-python-requirements
+
+custom:
+  pythonRequirements:
+    slim: true
+    fileName: requirements.txt

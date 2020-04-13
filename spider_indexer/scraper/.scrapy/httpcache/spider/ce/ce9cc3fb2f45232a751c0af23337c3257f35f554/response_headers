@@ -1,0 +1,24 @@
+Date: Sun, 12 Jan 2020 17:30:48 GMT
+Content-Type: text/html; charset=UTF-8
+Server: mw1332.eqiad.wmnet
+X-Powered-By: PHP/7.2.24-1+0~20191026.31+debian9~1.gbpbbacde+wmf1
+X-Content-Type-Options: nosniff
+P3P: CP="See https://en.wikipedia.org/wiki/Special:CentralAutoLogin/P3P for more info."
+Content-Language: en
+Vary: Accept-Encoding,Cookie,Authorization
+Content-Encoding: gzip
+Last-Modified: Sun, 12 Jan 2020 17:28:35 GMT
+Backend-Timing: D=357149 t=1578850247972828
+X-Ats-Timestamp: 1578850248
+X-Varnish: 1066769445 998947920
+Age: 2301
+X-Cache: cp3050 miss, cp3064 hit/12
+X-Cache-Status: hit-front
+Server-Timing: cache;desc="hit-front"
+Strict-Transport-Security: max-age=106384710; includeSubDomains; preload
+Set-Cookie: WMF-Last-Access=12-Jan-2020;Path=/;HttpOnly;secure;Expires=Thu, 13 Feb 2020 12:00:00 GMT
+Set-Cookie: WMF-Last-Access-Global=12-Jan-2020;Path=/;Domain=.wikipedia.org;HttpOnly;secure;Expires=Thu, 13 Feb 2020 12:00:00 GMT
+X-Analytics: ns=0;page_id=22936;WMF-Last-Access=10-Jan-2020;WMF-Last-Access-Global=10-Jan-2020;https=1
+X-Client-Ip: 109.153.117.243
+Cache-Control: private, s-maxage=0, max-age=0, must-revalidate
+Accept-Ranges: bytes

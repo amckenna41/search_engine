@@ -1,0 +1,42 @@
+#buildspec yaml file used for pipelining
+version: 0.2
+
+env:
+  variables:
+    REGION_NAME: eu-west-1
+
+#phases lists all the different stages of the build that occurs
+phases:
+  install:
+    runtime-versions:
+      python: 3.7           #setting the runtime as Python
+    #installing all the required Python dependancies and running any tests if present
+    commands:
+      - echo Executing Install Phase in $REGION_NAME
+      - apt-get update
+      - echo Installing scrapy Python library...
+      - pip install scrapy
+      - echo Installing scrapy user agents dependancy needed to rotate user agents and stop crawler being blocked
+      - pip install scrapy-useragents
+      - echo Installing awscli
+      - pip install awscli
+      - echo Installing boto3 Python library...
+      - pip install boto3
+
+  pre_build:
+    commands:
+      - echo Executing Pre Build Phase
+  build:
+    commands:
+      - echo Executing Build Phase
+      - echo Build started
+
+  post_build:
+    commands:
+      - echo Executing Post Build Phase
+      - echo Build succeded.
+
+#artifacts phase packages up all the files in folder of spider indexer including dependancies, this zipped folder is then sent to an s3 bucket
+artifacts:
+  files:
+    - '**/*'

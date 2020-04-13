@@ -1,0 +1,22 @@
+Date: Sun, 12 Jan 2020 12:29:51 GMT
+Vary: Accept-Encoding,Cookie,Authorization
+Server: ATS/8.0.5
+X-Ats-Timestamp: 1578832191
+Content-Type: text/html; charset=UTF-8
+X-Powered-By: PHP/7.2.24-1+0~20191026.31+debian9~1.gbpbbacde+wmf1
+X-Content-Type-Options: nosniff
+P3P: CP="See https://en.wikipedia.org/wiki/Special:CentralAutoLogin/P3P for more info."
+Content-Language: en
+Content-Encoding: gzip
+Last-Modified: Sat, 11 Jan 2020 12:33:36 GMT
+Backend-Timing: D=357252 t=1578746426036401
+X-Varnish: 1065639351 507351982
+Age: 20842
+X-Cache: cp3060 miss, cp3064 hit/252
+X-Cache-Status: hit-front
+Server-Timing: cache;desc="hit-front"
+Strict-Transport-Security: max-age=106384710; includeSubDomains; preload
+X-Analytics: ns=0;page_id=14533;WMF-Last-Access=12-Jan-2020;WMF-Last-Access-Global=12-Jan-2020;https=1
+X-Client-Ip: 109.153.117.243
+Cache-Control: private, s-maxage=0, max-age=0, must-revalidate
+Accept-Ranges: bytes
