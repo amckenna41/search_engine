@@ -17,8 +17,13 @@ Back-end:
 The back-end was made up of all the components not visible to the user which included the API gateway's, search mechanism and data stores. The API gateways allowed for the search term to be passed from front-end to the CloudSearch instances, which would then search through the indexed data pulled from the data stores to return to user. The two data stores were implemented using DynamoDB, a key-value document NoSQL data storage structure.
 
 Logging:
-Monitoring and logging was also implemented in the QSE. A plethora of metrics and dimensions from each of the system's components were monitored with various alarms and events triggered if the monitiored metrics surpassed a threshold or if an error in the components occurred. Data from the components were also The CloudWatch service was used for this monitoring and logging. 
+Monitoring and logging was also implemented in the QSE. A plethora of metrics and dimensions from each of the system's components were monitored with various alarms and events triggered if the monitiored metrics surpassed a threshold or if an error in the components occurred. Data from the components was also collected and logged within an S3 bucket. The CloudWatch service was used for this monitoring and logging. 
 
 Deployment Scipts:
 I created Terraform scripts for the 3 main cloud providers; AWS, GCP, Azure. These scripts, when executed, automatically spun up the required resources and instances of the components required for the system. This was an implementation of infastructure-as-a-code. 
 
+Ci/CD pipelining:
+I implemented continuous integration/continuous deployment using the AWS CodePipeline service. This service ensured that any changes made to the code of the front-end or the web scraper, passed the relevant steps before live deployment. The first stage of my pipeline was AWS CodeCommit, which I used as a repository for my code. The next stage was CodeBuild, where my source code was compiled and tests were ran. The final stage of the pipeline executed if the previous stages passed and it involved the deployment to the S3 bucket were the front-end was hosted. 
+
+The design of this system on AWS can be seen below:
+![alt text](https://github.com/amckenna41/search_engine/blob/master/AWSSystemDesign.png?raw=true)
