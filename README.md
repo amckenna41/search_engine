@@ -26,4 +26,5 @@ Ci/CD pipelining:
 I implemented continuous integration/continuous deployment using the AWS CodePipeline service. This service ensured that any changes made to the code of the front-end or the web scraper, passed the relevant steps before live deployment. The first stage of my pipeline was AWS CodeCommit, which I used as a repository for my code. The next stage was CodeBuild, where my source code was compiled and tests were ran. The final stage of the pipeline executed if the previous stages passed and it involved the deployment to the S3 bucket were the front-end was hosted. 
 
 The design of this system on AWS can be seen below:
+
 ![alt text](https://github.com/amckenna41/search_engine/blob/master/AWSSystemDesign.png?raw=true)
