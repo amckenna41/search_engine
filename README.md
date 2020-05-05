@@ -8,12 +8,17 @@ Web-crawler:
 The web crawler or spider indexer for the QSE was created in Python using the extensible and versatile framework Scrapy. A selection of wikipedia pages were used for scraping. The output from the scraped data was indexed and placed into a DynamoDB table on AWS programmatically using the Boto3 AWS Python library. 
 
 Front-end:
-The front-end for the search engine was hosted in an S3 bucket due to its static web hosting capability. 
+The front-end for the search engine was hosted in an S3 bucket due to its static web hosting capability. Here, there was a search bar that the user entered their search term. After clicking search a JS function was called that passed the search term to the back-end using an API and the result was returned, parsed and displayed to the user. Error detection was also implemented on the front-end. 
 
 Search:
+The search mechanism was used to actually implement the search functionality of the back-end. To implement this, I used an AWS Service called AWS CloudSearch which created a searchable index of my back-end datastore, making the scraped documeents searchable. Two instances of CloudSearch were used, one for the main search result data from the main data store, and the other for searching and indexing the ads data store. CloudSearch sat between the front-end API and the data stores; CloudSearch received the search term from the front-end API and then searched for the term in the indexed documents pulled from the DynamoDB tables. 
 
 Back-end:
+The back-end was made up of all the components not visible to the user which included the API gateway's, search mechanism and data stores. The API gateways allowed for the search term to be passed from front-end to the CloudSearch instances, which would then search through the indexed data pulled from the data stores to return to user. The two data stores were implemented using DynamoDB, a key-value document NoSQL data storage structure.
+
+Logging:
+Monitoring and logging was also implemented in the QSE. A plethora of metrics and dimensions from each of the system's components were monitored with various alarms and events triggered if the monitiored metrics surpassed a threshold or if an error in the components occurred. Data from the components were also The CloudWatch service was used for this monitoring and logging. 
 
 Deployment Scipts:
+I created Terraform scripts for the 3 main cloud providers; AWS, GCP, Azure. These scripts, when executed, automatically spun up the required resources and instances of the components required for the system. This was an implementation of infastructure-as-a-code. 
 
-Hosting:
